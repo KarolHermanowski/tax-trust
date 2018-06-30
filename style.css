@@ -11,6 +11,7 @@ li {
 
 .container {
     width: 100%;
+    box-sizing: border-box;
 }
 
 .article {
@@ -264,6 +265,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin-top: 75px;
 }
 
@@ -441,7 +443,6 @@ h2 {
     .nav ul>li {
         width: 25%;
         height: 100%;
-        ;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -455,6 +456,7 @@ h2 {
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
+        transition: color 0.11s ease-in-out;
     }
     .nav ul>li a:hover {
         color: #005385;
@@ -474,6 +476,13 @@ h2 {
     .offer {
         margin-top: 135px;
     }
+    /* -----customer zone----- */
+    .socialBox a:hover{
+      transition: color 0.3s ease-in-out;
+    }
+    .socialBox a:hover {
+      color: #404042;
+  }
     /* -----contact----- */
     .contact form input,
     .contact form textarea {
@@ -562,7 +571,7 @@ h2 {
     }
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1601px) {
     .container {
         width: 1600px;
         margin: auto;
