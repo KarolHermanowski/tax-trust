@@ -14,7 +14,7 @@ const customerZoneLink = document.querySelector('#customerZoneLink');
 const customerZone = document.querySelector('.customerZone');
 const contactLink = document.querySelector('#contactLink');
 const contact = document.querySelector('.contact');
-// clicking hamburger
+// click hamburger
 hamburger.addEventListener('click', () => {
   if (nav.classList.contains('isClick')) {
     nav.classList.remove('isClick');
@@ -22,7 +22,7 @@ hamburger.addEventListener('click', () => {
     nav.classList.add('isClick');
   }
 }, false);
-//clicking link in ul in main menu
+//click link in ul in main menu
 menuList.addEventListener('click', (e) => {
   if (e.target.localName == "a") {
     nav.classList.remove('isClick');
@@ -40,7 +40,7 @@ window.addEventListener('resize', () => {
   }
 });
 
-
+// show goTop button
 window.addEventListener('scroll', () => {
   if (window.pageYOffset > 200) {
     goTop.classList.add('showGoTop');
@@ -48,14 +48,9 @@ window.addEventListener('scroll', () => {
   else {
     goTop.classList.remove('showGoTop');
   }
-
-  if (window.pageYOffset > 100 && window.innerWidth > 640) {
-    header.classList.add('scrollSticky');
-  }
-  else
-    header.classList.remove('scrollSticky');
 }, false);
 
+// send to right place on website
 offerLink.addEventListener('click', () => {
   scroll(0, 0);
 }, false);
@@ -70,7 +65,7 @@ contactLink.addEventListener('click', () => {
 }, false);
 
 
-
+//after click in goTop button go to  point (0,0)
 goTop.addEventListener('click', () => {
   scroll(0, 0);
 }, false);
