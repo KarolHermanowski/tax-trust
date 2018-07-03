@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Tax&amp;Trust</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="css/fontello.css">
-  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css-fontello/fontello.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 
 <body>
-  <div class="container">
+  
     <!--Header: logo and main menu-->
     <header class="header sticky">
       <img src="img/logo.png" alt="logo Tax&amp;Trust" class="logo">
@@ -37,7 +37,31 @@
       </nav>
 
     </header>
-    <main class="mainContent">
+    <div class="container">
+      <!-- Slider -->
+        <div class="slider">
+            <figure class="slide active">
+                <img src="img/1.jpg" alt="First slide">
+                <figcaption>Some describe or information about company</figcaption>
+            </figure>
+    
+            <figure class="slide">
+                <img src="img/2.jpg" alt="Second slide">
+                <figcaption>Some describe or information about company</figcaption>
+            </figure>
+    
+            <figure class="slide">
+                <img src="img/3.jpg" alt="Thirdth slide">
+                <figcaption>Some describe or information about company</figcaption>
+            </figure>
+    
+            <nav class="sliderDots">
+                <button class="dot active"></button>
+                <button class="dot"></button>
+                <button class="dot"></button>
+            </nav>
+        </div>
+    <main>
       <!--Company's offer-->
       <section class="offer content">
         <h2 class="titleBox">OFERTA</h2>
@@ -222,50 +246,52 @@
         </div>
       </section>
     </main>
-    <footer class="footer">
-      <div class="usefulInformation">
-        <div class="usefulLink">
-          <h3>Strony, które mogą Ci się przydać:</h3>
-          <ul>
-            <li>
-              <a href="#">strona nr 1</a>
-            </li>
-            <li>
-              <a href="#">strona nr 2</a>
-            </li>
-            <li>
-              <a href="#">strona nr 3</a>
-            </li>
-            <li>
-              <a href="#">strona nr 4</a>
-            </li>
-            <li>
-              <a href="#">strona nr 5</a>
-            </li>
-          </ul>
+  </div>
+  <footer class="footer">
+    <div class="usefulInformation">
+      <div class="usefulLink">
+        <h3>Strony, które mogą Ci się przydać:</h3>
+        <ul>
+          <li>
+            <a href="#">strona nr 1</a>
+          </li>
+          <li>
+            <a href="#">strona nr 2</a>
+          </li>
+          <li>
+            <a href="#">strona nr 3</a>
+          </li>
+          <li>
+            <a href="#">strona nr 4</a>
+          </li>
+          <li>
+            <a href="#">strona nr 5</a>
+          </li>
+        </ul>
+      </div>
+      <div class="socials">
+        <div class="socialBox">
+          <a href="#">
+            <i class="demo-icon icon-facebook-official"></i>
+          </a>
         </div>
-        <div class="socials">
-          <div class="socialBox">
-            <a href="#">
-              <i class="demo-icon icon-facebook-official"></i>
-            </a>
-          </div>
-          <div class="socialBox">
-            <a href="#">
-              <i class="demo-icon icon-twitter-squared"></i>
-            </a>
-          </div>
-          <div class="socialBox">
-            <a href="#">
-              <i class="demo-icon icon-youtube-play"></i>
-            </a>
-          </div>
+        <div class="socialBox">
+          <a href="#">
+            <i class="demo-icon icon-twitter-squared"></i>
+          </a>
+        </div>
+        <div class="socialBox">
+          <a href="#">
+            <i class="demo-icon icon-youtube-play"></i>
+          </a>
         </div>
       </div>
-      <div class="copyRights">Tax&amp;Trust &copy; All rights reserved</div>
-    </footer>
-  </div>
-  <script src="script.js"></script>
+    </div>
+    <div class="copyRights">Tax&amp;Trust &copy; All rights reserved</div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/slider.js"></script>
 </body>
 
 </html>
