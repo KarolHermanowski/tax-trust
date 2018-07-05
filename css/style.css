@@ -75,14 +75,6 @@ h2 {
     flex-direction: column;
 }
 
-.header::after {
-    content: '';
-    width: 90%;
-    height: 1px;
-    background-color: #404042;
-    align-self: center;
-}
-
 /* --logo-- */
 
 .logo {
@@ -191,7 +183,6 @@ h2 {
     margin: 0;
     position: absolute;
     height: 220px;
-    ;
     top: 100%;
     left: -100%;
     padding-bottom: 15px;
@@ -229,9 +220,10 @@ h2 {
 .slider {
     max-width: 1600px;
     position: relative;
+    margin-top: 110px;
     display: flex;
     justify-content: center;
-    margin-top: 105px;
+    overflow: hidden;
 }
 
 .slide {
@@ -239,13 +231,18 @@ h2 {
     width: 100%;
     height: 100%;
     margin: 0;
-    animation-name: fade;
-    animation-duration: 1.5s;
+    position: absolute;
+    z-index: 1;
+}
+
+.slide:first-child {
+    display: block;
+    opacity: 0;
+    position: static;
 }
 
 .slide figcaption {
     position: absolute;
-    z-index: 2;
     top: 0;
     width: 100%;
     min-height: 40px;
@@ -254,6 +251,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .slider img {
@@ -263,32 +261,100 @@ h2 {
 
 .sliderDots {
     position: absolute;
+    bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 2;
-    bottom: 25px;
 }
 
 .dot {
-    width: 25px;
-    height: 25px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     margin: 15px;
-    border: none;
+    display: inline-block;
     background-color: #000;
     opacity: 0.6;
+}
+
+.previous,
+.next {
+    padding: 0;
+    width: 40px;
+    height: 50px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     cursor: pointer;
+    outline: none;
+}
+
+.previous {
+    justify-content: flex-end;
+}
+
+.previous::before,
+.next::before {
+    content: '';
+    display: block;
+    transform: rotate(-135deg);
+    height: 25px;
+    width: 25px;
+    border-top: 3px solid #000000;
+    border-right: 3px solid #000000;
+}
+
+.next::before {
+    transform: rotate(45deg);
+}
+
+.previous:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .sliderDots button:hover {
     opacity: 0.85;
 }
 
-.active {
+.show {
     display: block;
+    animation-name: show;
+    animation-duration: .5s;
+    animation-timing-function: linear;
 }
 
-.dot.active {
-    opacity: 0.85;
+.hide {
+    display: block;
+    animation-name: hide;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+}
+
+.active {
     display: inline-block;
+    opacity: 0.85;
+}
+
+@keyframes show {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes hide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translate(-100%)
+    }
 }
 
 /* -----offer----- */
@@ -296,19 +362,10 @@ h2 {
 .offer {
     display: flex;
     flex-direction: column;
-    margin-top: 125px;
+    margin-top: 75px;
     align-items: center;
     justify-content: center;
 }
-
-/* .offer::after {
-  content: '';
-  margin-top: 100px;
-  width: 90%;
-  height: 1px;
-  background-color: #404042;
-  align-self: center;
-} */
 
 /* -----price list----- */
 
@@ -319,15 +376,6 @@ h2 {
     margin-top: 75px;
 }
 
-/* .priceList::after {
-  content: '';
-  margin-top: 100px;
-  width: 90%;
-  height: 1px;
-  background-color: #404042;
-  align-self: center;
-} */
-
 /* -----customer zone----- */
 
 .customerZone {
@@ -337,15 +385,6 @@ h2 {
     justify-content: center;
     margin-top: 75px;
 }
-
-/* .customerZone::after {
-  content: '';
-  margin-top: 100px;
-  width: 90%;
-  height: 1px;
-  background-color: #404042;
-  align-self: center;
-} */
 
 /* -----contact----- */
 
@@ -488,10 +527,6 @@ h2 {
         margin-left: 35px;
         align-self: flex-start;
     }
-    /* -----slider----- */
-    .slider {
-        margin-top: 140px;
-    }
     /* -----navigation----- */
     .hamburger {
         display: none;
@@ -583,20 +618,8 @@ h2 {
         padding-bottom: 10px;
         margin: 0;
     }
-    .header::after {
-        display: flex;
-        position: absolute;
-        top: 100%;
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-    }
     .logo {
         margin-bottom: 0;
-    }
-    /* -----slider----- */
-    .slider {
-        margin-top: 94px;
     }
     /* -----navigation----- */
     .nav {
@@ -656,14 +679,5 @@ h2 {
     .header {
         width: 1600px;
         margin-left: calc(100%/2 - 1600px/2);
-    }
-}
-
-@keyframes fade {
-    from {
-        opacity: .4
-    }
-    to {
-        opacity: 1
     }
 }

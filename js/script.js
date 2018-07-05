@@ -52,7 +52,7 @@ window.addEventListener('scroll', () => {
 
 // send to right place on website
 offerLink.addEventListener('click', () => {
-  scroll(0, 0);
+  scroll(0, offer.offsetTop - header.offsetHeight);
 }, false);
 priceListLink.addEventListener('click', () => {
   scroll(0, priceList.offsetTop - header.offsetHeight);
