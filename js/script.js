@@ -50,22 +50,42 @@ window.addEventListener('scroll', () => {
   }
 }, false);
 
+function scrollTo(target) {
+  let position = pageYOffset;
+  const intervalId = setInterval(goTo, 1);
+  function goTo() {
+    for(let i = 0; i<15; i++){
+      if (position == target) {
+        clearInterval(intervalId);
+      }
+      else if (position > target) {
+        position--;
+      }
+      else{
+        position++;
+        
+      }
+    }
+    
+    scroll(0, position);
+  }
+}
 // send to right place on website
 offerLink.addEventListener('click', () => {
-  scroll(0, offer.offsetTop - header.offsetHeight);
+  scrollTo(offer.offsetTop - header.offsetHeight);
 }, false);
 priceListLink.addEventListener('click', () => {
-  scroll(0, priceList.offsetTop - header.offsetHeight);
+  scrollTo(priceList.offsetTop - header.offsetHeight);
 }, false);
 customerZoneLink.addEventListener('click', () => {
-  scroll(0, customerZone.offsetTop - header.offsetHeight)
+  scrollTo(customerZone.offsetTop - header.offsetHeight)
 }, false);
 contactLink.addEventListener('click', () => {
-  scroll(0, contact.offsetTop - header.offsetHeight)
+  scrollTo(contact.offsetTop - header.offsetHeight)
 }, false);
 
 
 //after click in goTop button go to  point (0,0)
 goTop.addEventListener('click', () => {
-  scroll(0, 0);
+  scrollTo(0);
 }, false);

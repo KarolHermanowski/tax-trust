@@ -49,7 +49,6 @@ function changeSlide() {
 }
 //assign interval to the variable
 let changeSlideInterval = setInterval(changeSlide, 3500);
-let isClick = 0;
 //change slide to previous if its click
 previous.addEventListener('click', () => {
 
